@@ -3,3 +3,6 @@ npm-debug.log*
 coverage
 lib/
 es/
+dist/
+.idea
+.vscode
