@@ -1,15 +1,14 @@
 {
-  "name": "crypto-key-composer",
+  "name": "@credify/crypto-key-composer",
   "version": "0.1.3",
   "description": "A library to decompose and compose crypto keys of different types and formats",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "homepage": "https://github.com/ipfs-shipyard/js-crypto-key-composer#readme",
+  "main": "dist/index.js",
+  "homepage": "https://github.com/credify-pte-ltd/js-crypto-key-composer#readme",
   "author": "André Cruz <andre@moxy.studio>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ipfs-shipyard/js-crypto-key-composer.git"
+    "url": "git+https://github.com/credify-pte-ltd/js-crypto-key-composer.git"
   },
   "keywords": [
     "crypto",
@@ -27,16 +26,12 @@
     "secp256k1"
   ],
   "bugs": {
-    "url": "https://github.com/ipfs-shipyard/js-crypto-key-composer/issues"
+    "url": "https://github.com/credify-pte-ltd/js-crypto-key-composer/issues"
   },
-  "files": [
-    "lib",
-    "es"
-  ],
   "scripts": {
     "build:commonjs": "BABEL_ENV=commonjs babel src -d lib --delete-dir-on-start",
     "build:es": "BABEL_ENV=es babel src -d es --delete-dir-on-start",
-    "build": "npm run build:commonjs && npm run build:es",
+    "build": "rollup -c",
     "test": "jest --coverage",
     "lint": "eslint --ignore-path .gitignore .",
     "prerelease": "npm t && npm run lint && npm run build",
@@ -68,6 +63,9 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@commitlint/config-conventional": "^7.5.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.1.1",
     "babel-jest": "^24.5.0",
     "babel-preset-moxy": "^3.0.4",
     "commitlint": "^7.5.2",
@@ -76,6 +74,7 @@
     "husky": "^2.1.0",
     "jest": "^24.5.0",
     "lint-staged": "^8.1.4",
+    "rollup": "^2.39.0",
     "standard-version": "^6.0.1"
   },
   "dependencies": {
@@ -86,6 +85,7 @@
     "es6-error": "^4.1.1",
     "lodash": "^4.17.11",
     "matcher": "^2.0.0",
-    "node-forge": "^0.8.1"
+    "node-forge": "^0.8.1",
+    "rollup-plugin-delete": "^2.0.0"
   }
 }
